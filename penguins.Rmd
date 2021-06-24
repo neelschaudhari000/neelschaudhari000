@@ -1,0 +1,119 @@
+---
+title: "DAB501 PROJECT GP26"
+author: "GROUP-26"
+output: html_document
+---
+```{r}
+library(tidyverse)
+```
+
+
+
+```{r}
+ read.csv("C:/Users/neels/Desktop/DAB501/project/tidytuesday/data/2020/2020-07-28/penguins.csv")
+```
+
+```{r}
+penguins <- read.csv("C:/Users/neels/Desktop/DAB501/project/tidytuesday/data/2020/2020-07-28/penguins.csv")
+```
+
+
+```{r}
+#Histogram
+ggplot(penguins) +
+  geom_histogram(aes(x = body_mass_g), 
+                 color = "blue", 
+                 fill = "yellow",
+                 bins = 30) +
+  labs (title = "Histogram",
+        subtitle = "Number of species at different body mass in grams", 
+        x = "Body Masses in Grams",
+        y="Number of species", 
+        caption = "Number of Species vs Body mass on islands" ) 
+```
+# from above Histogram, we can understand easily about the population of penguins at different Body Mass.
+
+```{r}
+#Histogram
+ggplot(penguins) +
+  geom_histogram(aes(bill_depth_mm),
+                 color = "blue" , 
+                 fill = "pink", 
+                 bins = 30) + 
+  labs (title = "Histogram", 
+        subtitle = "Number of species at different Bill depths in millimeters", 
+        x = "Body depths in millimeters", 
+        y="Number of species", 
+        caption = "Number of Species vs Body depths on islands" ) 
+```
+# Here also histogram shows the relatinship between Body depths and number of species.
+
+```{r}
+#Bardiagram
+ggplot(penguins) + 
+  geom_bar(aes(species, fill = sex),
+           color = "blue" ) + 
+  labs (title = "Barplot", 
+        subtitle = "Number of males and females of 3 different species ",
+        x = "3 different species",
+        y="Number of species",
+        caption = "Number Of Female and Male" ) 
+```
+
+# From above diagram, visualization helps us to distinguish the population of male and female of different species. 
+
+```{r}
+#Histogram
+ggplot(penguins) +
+  geom_histogram(aes(body_mass_g, fill = island),
+                 color = "white", 
+                 bins = 30) +  
+  labs (title = "Histogram",
+        subtitle = "Number of species of different body masses on different islands " ,
+        x = "Body mass in grams", 
+        y="Number of species", 
+        caption = "Body masses of species on 3 different" ) 
+```
+
+
+```{r}
+plotly::ggplotly(ggplot(penguins) +
+                   geom_point(aes( body_mass_g, flipper_length_mm ,fill = island)) +
+                   labs (title = "ggplotly Scatterplot", 
+                         subtitle = "Body mass in grams vs Flipper length in millimeters" ,
+                         x = "Body mass in gram", 
+                         y="Flipper length in mm", 
+                         caption = "Increasing body mass with rising flipper length" ) )
+```
+
+
+
+```{r}
+plotly::ggplotly(ggplot(penguins) +
+                   geom_point(aes( body_mass_g, bill_length_mm, fill = species)) + 
+                   labs (title = "Scatterplot", 
+                         subtitle = "Body mass in grams vs Bill depth in millimeters" ,
+                         x = "Body mass in gram", 
+                         y="Bill depth in millimeters",  
+                         caption = "Gentoo has more weight than other species" ) )
+```
+
+
+```{r}
+plotly::ggplotly(ggplot(penguins) + 
+                   geom_point(aes(body_mass_g, flipper_length_mm, fill = island)) +
+                   facet_wrap(~ year, nrow = 3) + 
+                   labs(title = "Scatterplot using facets of 3 different years",
+                        x = "Body mass in grams", 
+                        y = "flipper length in mm") )
+```
+
+```{r}
+plotly::ggplotly(ggplot(penguins) +
+                   geom_point(aes(body_mass_g, bill_length_mm, fill = island, label = sex)) +
+                   facet_wrap(~ species, nrow = 3) + 
+                   labs (title = "Scatterplot using facets of 3 different species",
+                         x = "Body mass in gram",
+                         y = "Bill length in mm"))
+```
+
