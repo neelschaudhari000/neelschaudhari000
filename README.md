@@ -1,9 +1,7 @@
 ### Hi there 👋
 <div align="center">
-   <h1>Hi there, I'm <a href="https://github.com/neelschaudhai000">Neel</a> <img src="https://media4.giphy.com/media/zoKdmndB8QBR2c0gjy/giphy.gif?cid=ecf05e47t3r4i47225v0bcbqyuhh08wc83dmbotqtj023ei5&rid=giphy.gif&ct=g" width="25px"> </h1>
+   <h1>I'm <a href="https://github.com/neelschaudhai000">Neel</a> <img src="https://media4.giphy.com/media/zoKdmndB8QBR2c0gjy/giphy.gif?cid=ecf05e47t3r4i47225v0bcbqyuhh08wc83dmbotqtj023ei5&rid=giphy.gif&ct=g" width="25px"> </h1>
 
-a
-   <img src="https://pronoun.cyou/x/y?subject=He&object=Him&height=20"> 
 <!--
 **neelschaudhari000/neelschaudhari000** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
